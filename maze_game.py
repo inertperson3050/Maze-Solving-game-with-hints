@@ -3,7 +3,7 @@ import random
 import time
 import sys
 
-# Constants
+
 WIDTH, HEIGHT = 1366, 768
 GRID_SIZE = 30
 MAZE_WIDTH, MAZE_HEIGHT = WIDTH // GRID_SIZE, HEIGHT // GRID_SIZE
@@ -15,11 +15,11 @@ EXIT_COLOR = (0, 0, 255)
 HINT_COLOR = (0, 255, 0)
 FPS = 60
 
-TIME_LIMIT = 300  # Time limit in seconds
-MOVE_TIMEOUT = 1.2  # Timeout for hint in seconds
+TIME_LIMIT = 300  
+MOVE_TIMEOUT = 1.2
 
-# Directions for movement
-DIRECTIONS = [(0, -1), (1, 0), (0, 1), (-1, 0)]  # Up, Right, Down, Left
+
+DIRECTIONS = [(0, -1), (1, 0), (0, 1), (-1, 0)]  
 
 def generate_maze():
     maze = [[1] * MAZE_WIDTH for _ in range(MAZE_HEIGHT)]
@@ -38,11 +38,11 @@ def generate_maze():
     start_x, start_y = random.randint(0, MAZE_WIDTH - 1), random.randint(0, MAZE_HEIGHT - 1)
     carve(start_x, start_y)
 
-    # Ensure exit is reachable and is not the same as start
+    
     exit_x, exit_y = start_x, start_y
     while exit_x == start_x and exit_y == start_y:
         exit_x, exit_y = random.randint(0, MAZE_WIDTH - 1), random.randint(0, MAZE_HEIGHT - 1)
-        # Ensure exit is on a valid path
+    
         if maze[exit_y][exit_x] != 0:
             exit_x, exit_y = start_x, start_y
 
@@ -111,7 +111,7 @@ def main():
                     player_pos = new_pos
                     last_move_time = time.time()
 
-        # Check if player reached the exit
+    
         if player_pos == exit_pos:
             print("You win!")
             running = False
