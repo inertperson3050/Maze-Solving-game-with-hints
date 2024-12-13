@@ -15,8 +15,8 @@ EXIT_COLOR = (0, 0, 255)
 HINT_COLOR = (0, 255, 0)
 FPS = 60
 
-TIME_LIMIT = 300  
-MOVE_TIMEOUT = 1.2
+TIME_LIMIT = 60
+MOVE_TIMEOUT = 10.2
 
 
 DIRECTIONS = [(0, -1), (1, 0), (0, 1), (-1, 0)]  
